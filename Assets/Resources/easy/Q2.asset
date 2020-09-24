@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9ce498b3a91942b8ee086196b2a27, type: 3}
+  m_Name: Q2
+  m_EditorClassIdentifier: 
+  _info: "You are given the following information, but you may prefer to do some 
+    research for yourself. <br> \u25CF \_1 Jan 1900 was a Monday. <br>\L \u25CF \_Thirty
+    days has September, <br>\LApril, June and November.<br>\LAll the rest have thirty-one,<br>\LSaving
+    February alone,<br>\LWhich has twenty-eight, rain or shine. And on leap years,
+    twenty-nine. <br>\L \u25CF \_A leap year occurs on any year evenly divisible
+    by 4, but not on a century unless it is divisible by 400. <br>\LHow many Sundays
+    fell on the first of the month during the twentieth century (1 Jan 1901 to 31
+    Dec 2000)? "
+  _ans: 171

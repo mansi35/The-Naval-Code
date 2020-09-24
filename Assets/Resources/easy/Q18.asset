@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9ce498b3a91942b8ee086196b2a27, type: 3}
+  m_Name: Q18
+  m_EditorClassIdentifier: 
+  _info: "Following is an incorrect pseudocode for the algorithm which is supposed
+    to determine whether a sequence of parentheses is balanced:<\\br> declare a character
+    stack<\\br> while ( more input is available)<\\br> {<\\br>    read a character<\\br>   
+    if ( the character is a '(' )<\\br>       push it on the stack<\\br>    else
+    if ( the character is a ')' and the stack is not empty )<\\br>       pop a character
+    off the stack<\\br> else<\\br>\Lprint \"unbalanced\" and exit <\\br> }<\\br>\Lprint
+    \"balanced\" <\\br> Which of these unbalanced sequences does the above code think
+    is balanced?<\\br> 1 ((())<\\br> 2 ())(()<\\br> 3 (()()))<\\br> 4 (()))()"
+  _ans: 1

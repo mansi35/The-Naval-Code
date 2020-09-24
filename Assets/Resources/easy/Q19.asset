@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9ce498b3a91942b8ee086196b2a27, type: 3}
+  m_Name: Q19
+  m_EditorClassIdentifier: 
+  _info: "The following C function takes a single-linked list of integers as a parameter
+    and rearranges the elements of the list. The function is called with the list
+    containing the integers 1, 2, 3, 4, 5, 6, 7 in the given order. <\\br>What will
+    be the contents of the list after the function completes execution? <\\br> struct
+    node <\\br>{ <\\br> int value; <\\br>   struct node *next;<\\br> };<\\br> void
+    rearrange(struct node *list)<\\br> {<\\br> struct node *p, * q;<\\br>\Lint temp;<\\br>\Lif
+    ((!list) || !list->next) <\\br>       return;<\\br>   p = list;<\\br> q = list->next;<\\br>
+    while(q)<\\br>\L{ <\\br> temp = p->value; <\\br>p->value = q->value; <\\br>q->value
+    = temp;<\\br>\Lp = q->next; <\\br> q = p?p->next:0; <\\br>} <\\br> } <\\br> 1)
+    1,2,3,4,5,6,7<\\br> 2) 2,1,4,3,6,5,7<\\br> 3) 1,3,2,5,4,7,6<\\br> 4) 2,3,4,5,6,7,1 "
+  _ans: 2

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9ce498b3a91942b8ee086196b2a27, type: 3}
+  m_Name: Q20
+  m_EditorClassIdentifier: 
+  _info: "The tower of hanoi is a famous puzzle where we have three rods and N disks.
+    The objective of the puzzle is to move the entire stack to another rod. You are
+    given the number of discs N. Initially, these discs are in the rod 1. You need
+    to count(move count) the steps of discs movement so that all the discs reach
+    the 3rd rod. <\\br> Note: The discs are arranged such that the top disc is numbered
+    1 and the bottom-most disc is numbered N. Also, all the discs have different
+    sizes and a bigger disc cannot be put on the top of a smaller disc.<\\br>\LWhat
+    are The total number of moves for N=5;  "
+  _ans: 31

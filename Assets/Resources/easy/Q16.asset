@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9ce498b3a91942b8ee086196b2a27, type: 3}
+  m_Name: Q16
+  m_EditorClassIdentifier: 
+  _info: "Consider the following code :<\\br>   #include<\\br> #define EOF -1<\\br>\Lvoid
+    push (int); /* push the argument on the stack */<\\br>  int pop (void); /* pop
+    the top of the stack */<\\br>\Lvoid flagError ();  <\\br> int main ()<\\br>  
+    {  int c, m, n, r;<\\br>       while ((c = getchar ()) != EOF)<\\br>        
+    { if  (isdigit (c) )<\\br>             push (c);<\\br>          else if ((c ==
+    '+') || (c == '*'))<\\br>             { m = pop ();<\\br>                n =
+    pop ();<\\br>                r = (c == '+') ? n + m : n*m;<\\br> push (r); <\\br>
+    } <\\br>          else if (c != ' ')<\\br>            flagError ();<\\br> }<\\br>\Lprintf(\"%
+    c\", pop ()); <\\br> } <\\br> What is the output of the program for the following
+    input ? 5 2 * 3 3 2 +* + <\\br>"
+  _ans: 25

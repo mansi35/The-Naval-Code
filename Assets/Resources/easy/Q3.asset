@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9ce498b3a91942b8ee086196b2a27, type: 3}
+  m_Name: Q3
+  m_EditorClassIdentifier: 
+  _info: "What will be the output of following code <br>\L#include<stdio.h> int main()<br>\L{
+    <br>\Lstatic int i=5; if(--i){ <br>\Lmain(); <br>\Lprintf(\"%d \",i); } <br>\L} "
+  _ans: 0

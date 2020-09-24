@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe9ce498b3a91942b8ee086196b2a27, type: 3}
+  m_Name: Q17
+  m_EditorClassIdentifier: 
+  _info: 'The seven elements A, B, C, D, E, F and G are pushed onto a stack in reverse
+    order, i.e., starting from G. The stack is popped five times and each element
+    is inserted into a queue.Two elements are deleted from the queue and pushed back
+    onto the stack. Now, one element is popped from the stack. The popped item is
+    <\br> 1)A &emsp;2)B &emsp;3)C &emsp;4) D  '
+  _ans: 2
