@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 644386583707118071}
   - component: {fileID: 644386583707118069}
   - component: {fileID: 644386583707118068}
+  - component: {fileID: 291107589}
   m_Layer: 0
   m_Name: _NetworkManager
   m_TagString: Untagged
@@ -57,9 +58,10 @@ MonoBehaviour:
     type: 3}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
-  m_OfflineScene: Lobby
+  m_OfflineScene: lobby_scene
   m_OnlineScene: Main_Level01
-  m_SpawnPrefabs: []
+  m_SpawnPrefabs:
+  - {fileID: 5863722591355401319, guid: 4833b0a54a0c373449053ddf15f2cc30, type: 3}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -128,6 +130,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  showGUI: 1
+  showGUI: 0
   offsetX: 0
   offsetY: 0
+--- !u!114 &291107589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644386583707118067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b35b15c33f7f2499fc357b7555bb18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 644386583707118069}

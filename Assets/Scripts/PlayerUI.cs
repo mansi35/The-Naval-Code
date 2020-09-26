@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour {
 
-	// [SerializeField]
-	// RectTransform healthBarFill;
+	[SerializeField]
+	RectTransform healthBarFill;
 
 	[SerializeField]
 	GameObject pauseMenu;
@@ -12,8 +12,14 @@ public class PlayerUI : MonoBehaviour {
 	[SerializeField]
 	GameObject questionPanel;
 
+	[SerializeField]
+	Text coinText;
+
 	// [SerializeField]
-	// GameObject scoreboard;
+	// GameObject manager;
+
+	[SerializeField]
+	GameObject scoreboard;
 
 	private Player player;
 	private PlayerController controller;
@@ -31,20 +37,21 @@ public class PlayerUI : MonoBehaviour {
 
 	void Update ()
 	{
-		// SetHealthAmount(player.GetHealthPct());
+		SetHealthAmount(player.GetHealthPct());
+		SetCoinsAmount(player.currentCoins);
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			TogglePauseMenu();
 		}
 
-		// if (Input.GetKeyDown(KeyCode.Tab))
-		// {
-		// 	scoreboard.SetActive(true);
-        // } else if (Input.GetKeyUp(KeyCode.Tab))
-		// {
-		// 	scoreboard.SetActive(false);
-        // }
+		if (Input.GetKeyDown(KeyCode.Tab))
+		{
+			scoreboard.SetActive(true);
+        } else if (Input.GetKeyUp(KeyCode.Tab))
+		{
+			scoreboard.SetActive(false);
+        }
 	}
 
 	public void TogglePauseMenu ()
@@ -53,14 +60,19 @@ public class PlayerUI : MonoBehaviour {
 		PauseGame.IsOn = pauseMenu.activeSelf;
     }
 
-	public void ActivateQuestionPanel ()
+	public void ActivateQuestion ()
 	{
 		questionPanel.SetActive(true);
 	}
 
-	// void SetHealthAmount (float _amount)
-	// {
-	// 	healthBarFill.localScale = new Vector3(1f, _amount, 1f);
-	// }
+	void SetHealthAmount (float _amount)
+	{
+		healthBarFill.localScale = new Vector3(1f, _amount, 1f);
+	}
+
+	void SetCoinsAmount (int _amount)
+	{
+		coinText.text = _amount.ToString();
+	}
 
 }

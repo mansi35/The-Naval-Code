@@ -11,11 +11,19 @@ public class submitOnclick : MonoBehaviour
   public InputField inputUser;
 
   public QuestionManager game;
+  public bool quesStatus;
 
-  private void Start()
-  {
-    btnClick.onClick.AddListener(GetInputOnClickHandler);
-  }
+  private Player player;
+
+  public void SetPlayerPrefab (Player _player)
+	{
+		player = _player;
+	}
+
+  // private void Start()
+  // {
+  //   btnClick.onClick.AddListener(GetInputOnClickHandler);
+  // }
 
   public void GetInputOnClickHandler()
   {
@@ -33,11 +41,19 @@ public class submitOnclick : MonoBehaviour
   {
     if( myans != correctAns)
     {
-      Debug.Log("False");
+      quesStatus = false;
+      player.GetComponent<Player>().CmdSetDamage(10);
     }
     else
     {
-      Debug.Log("True");
+      quesStatus = true;
+      player.GetComponent<Player>().CmdSetCoins(10);
     }
   }
+
+  // [Command]
+  // void CmdTakeDamage (int _amount)
+  // {
+  //   player.GetComponent<Player>().RpcTakeDamage(_amount);
+  // }
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.Networking;
 
 public class Player : NetworkBehaviour
@@ -15,16 +16,49 @@ public class Player : NetworkBehaviour
     private int maxHealth = 100;
 
     [SyncVar]
-    private int currentHealth;
+    public int currentHealth;
+
+    [SerializeField]
+    private int maxCoins = 200;
+
+    [SyncVar]
+    public int currentCoins;
+
+    [SerializeField]
+    private int recievedCoins;
+    [SerializeField]
+    private int recievedHealth;
 
     [SerializeField]
     private Behaviour[] disableOnDeath;
     private bool[] wasEnabled;
 
+    [SyncVar]
+	public string username = "Loading...";
+
+    public float GetHealthPct ()
+	{
+		return (float)currentHealth / maxHealth;
+	}
+
+    void OnReceivedData (string data)
+	{
+		if (currentHealth == null ||currentCoins == null)
+			return;
+
+		recievedHealth = DataTranslator.DataToHealth(data);
+		recievedCoins = DataTranslator.DataToCoins(data);
+        CmdSetDamage(maxHealth - recievedHealth);
+        CmdSetCoins(recievedCoins);
+	}
+
     public void PlayerSetup ()
     {
         GameManager.instance.SetSceneCameraActive(false);
         GetComponent<PlayerSetup>().playerUIInstance.SetActive(true);
+
+        if (UserAccountManager.IsLoggedIn)
+			UserAccountManager.instance.GetData(OnReceivedData);
 
         CmdBroadcastNewPlayerSetup();
     }
@@ -47,6 +81,11 @@ public class Player : NetworkBehaviour
         SetDefaults();
     }
 
+    IEnumerator waiter ()
+	{
+		yield return new WaitForSeconds(5f);
+	}
+
     // void Update() {
     //     if (!isLocalPlayer)
     //         return;
@@ -56,12 +95,19 @@ public class Player : NetworkBehaviour
     //         RpcTakeDamage(999);
     //     }
     // }
+
+    [Command]
+    public void CmdSetDamage(int _amount)
+    {
+        RpcTakeDamage(_amount);
+    }
     
     [ClientRpc]
     public void RpcTakeDamage (int _amount)
     {
         if (isDead)
             return;
+
         currentHealth -= _amount;
 
         Debug.Log(transform.name + " now has " + currentHealth + " health.");
@@ -90,11 +136,29 @@ public class Player : NetworkBehaviour
         // CALL RESPAWN METHOD
     }
 
+    [Command]
+    public void CmdSetCoins (int _amount)
+    {
+        RpcTakeCoins(_amount);
+    }
+    
+    [ClientRpc]
+    public void RpcTakeCoins (int _amount)
+    {
+        currentCoins += _amount;
+
+        Debug.Log(transform.name + " now has " + currentCoins + " coins.");
+
+    }
+
     public void SetDefaults ()
     {
+
         isDead = false;
 
         currentHealth = maxHealth;
+
+        currentCoins = 0;
 
         for (int i = 0; i < disableOnDeath.Length; i++)
         {
